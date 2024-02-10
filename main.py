@@ -25,7 +25,7 @@ def wait_gas():
 
 def mint_and_bridge(private_key: str, from_chain: str, to_chain: str):
     from_rpc = chain_info[from_chain]['rpc']
-    to_id = chain_info[from_chain]['chain_id']
+    to_id = chain_info[to_chain]['chain_id']
 
     web3 = Web3(Web3.HTTPProvider(from_rpc))
     pub_address = web3.eth.account.from_key(private_key).address
